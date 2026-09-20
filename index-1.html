@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Namaskar India | Magazine</title>
+  <meta name="description" content="Namaskar India is a magazine of stories, people and places. Read the latest issue and subscribe.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hind:wght@400;500;600&family=Rozha+One&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --marigold: #F2A900;
+      --indigo: #1B2559;
+      --white: #FFFFFF;
+      --mist: #EEF0F8;
+      --rani: #C2185B;
+      --teal: #0E7C7B;
+      --display: "Rozha One", Georgia, serif;
+      --body: "Hind", system-ui, -apple-system, "Segoe UI", sans-serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--body); font-size: 1.125rem; line-height: 1.6; color: var(--indigo); background: var(--white); }
+    a { color: inherit; }
+    :focus-visible { outline: 3px solid var(--indigo); outline-offset: 3px; }
+    .wrap { max-width: 1040px; margin: 0 auto; }
+    h2 { font-family: var(--display); font-weight: 400; font-size: 2.25rem; line-height: 1.15; margin-bottom: 1.5rem; }
+
+    /* Header */
+    header { background: var(--marigold); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; padding: 1rem 1.5rem; }
+    header .brand { font-family: var(--display); font-size: 1.4rem; text-decoration: none; }
+    header nav a { margin-left: 1.25rem; text-decoration: none; font-weight: 500; }
+    header nav a:hover { text-decoration: underline; }
+
+    /* Hero */
+    .hero { background: var(--marigold); padding: 2.5rem 1.5rem 5rem; }
+    .hero .wrap { display: grid; grid-template-columns: 1fr; gap: 3rem; align-items: center; }
+    .hero h1 { font-family: var(--display); font-weight: 400; font-size: clamp(2.75rem, 9vw, 5.5rem); line-height: 1.05; margin-bottom: 1.25rem; }
+    .hero p { max-width: 32rem; font-size: 1.25rem; margin-bottom: 2rem; }
+    .btn { display: inline-block; background: var(--indigo); color: var(--white); padding: 0.85rem 1.75rem; border-radius: 999px; text-decoration: none; font-weight: 600; }
+    .btn:hover { background: #111a42; }
+    .btn.ghost { background: transparent; color: var(--indigo); border: 2px solid var(--indigo); margin-left: 0.75rem; }
+    .btn.ghost:hover { background: var(--indigo); color: var(--white); }
+
+    /* CSS magazine cover */
+    .cover { width: min(300px, 78%); aspect-ratio: 3 / 4; margin: 0 auto; background: var(--indigo); color: var(--white); padding: 1.5rem; display: flex; flex-direction: column; justify-content: space-between; transform: rotate(-3deg); box-shadow: 14px 14px 0 rgba(27, 37, 89, 0.25); position: relative; overflow: hidden; }
+    .cover .mast { font-family: var(--display); font-size: 2rem; line-height: 1; }
+    .cover .big { position: absolute; right: -0.5rem; bottom: 2.75rem; font-family: var(--display); font-size: 6.5rem; line-height: 1; color: var(--marigold); }
+    .cover .issue { font-size: 0.95rem; position: relative; }
+    @media (min-width: 800px) { .hero .wrap { grid-template-columns: 1.3fr 1fr; } }
+
+    /* Stories */
+    .stories { padding: 4rem 1.5rem; }
+    .story-layout { display: grid; grid-template-columns: 1fr; gap: 2rem; }
+    .lead { background: var(--indigo); color: var(--white); padding: 2rem; display: flex; flex-direction: column; justify-content: flex-end; min-height: 320px; }
+    .lead .tag { color: var(--marigold); font-weight: 600; margin-bottom: 0.5rem; }
+    .lead h3 { font-family: var(--display); font-weight: 400; font-size: 2rem; line-height: 1.15; margin-bottom: 0.75rem; }
+    .lead a { color: var(--marigold); font-weight: 600; }
+    .list { list-style: none; }
+    .list li { padding: 1.1rem 0 1.1rem 1.1rem; border-left: 6px solid var(--c, var(--rani)); margin-bottom: 1rem; background: var(--mist); }
+    .list .tag { font-weight: 600; color: var(--c, var(--rani)); font-size: 0.95rem; }
+    .list h3 { font-size: 1.2rem; font-weight: 600; line-height: 1.3; }
+    .list p { font-size: 1rem; }
+    @media (min-width: 800px) { .story-layout { grid-template-columns: 1.2fr 1fr; } }
+
+    /* Subscribe */
+    .subscribe { background: var(--mist); padding: 4rem 1.5rem; }
+    .plans { display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
+    .plan { background: var(--white); padding: 1.75rem; border-top: 8px solid var(--marigold); }
+    .plan.alt { border-top-color: var(--rani); }
+    .plan h3 { font-size: 1.3rem; font-weight: 600; }
+    .plan .price { font-family: var(--display); font-size: 2.5rem; line-height: 1.2; margin: 0.5rem 0; }
+    .plan p { font-size: 1rem; margin-bottom: 1.25rem; }
+    @media (min-width: 720px) { .plans { grid-template-columns: 1fr 1fr; } }
+
+    /* Contact */
+    .contact { padding: 4rem 1.5rem; }
+    .contact p { max-width: 34rem; margin-bottom: 1.25rem; }
+    .contact a.mail { display: block; font-family: var(--display); font-size: clamp(1.3rem, 5vw, 2rem); margin-bottom: 1.5rem; }
+    .btn.wa { background: #1E8E4E; }
+    .btn.wa:hover { background: #17703d; }
+
+    footer { background: var(--indigo); color: var(--white); padding: 1.5rem; text-align: center; font-size: 0.95rem; }
+
+    /* Floating WhatsApp */
+    .float-wa { position: fixed; right: 1rem; bottom: 1rem; background: #1E8E4E; color: var(--white); padding: 0.75rem 1.25rem; border-radius: 999px; text-decoration: none; font-weight: 600; box-shadow: 0 4px 12px rgba(0,0,0,0.25); z-index: 10; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a class="brand" href="#top">Namaskar India</a>
+    <nav>
+      <a href="#stories">Stories</a>
+      <a href="#subscribe">Subscribe</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <div class="hero">
+      <div class="wrap">
+        <div>
+          <!-- EDIT: headline and intro line -->
+          <h1>Stories from the India you have not read about yet</h1>
+          <p>Namaskar India is a magazine of people, places and everyday life. Read the current issue or get every edition at your door.</p>
+          <a class="btn" href="#subscribe">Subscribe now</a>
+          <a class="btn ghost" href="#stories">Read stories</a>
+        </div>
+        <div class="cover" aria-hidden="true">
+          <div class="mast">Namaskar India</div>
+          <div class="big">नमस्कार</div>
+          <!-- EDIT: issue name -->
+          <div class="issue">Issue 1, Autumn 2026</div>
+        </div>
+      </div>
+    </div>
+
+    <section class="stories" id="stories">
+      <div class="wrap">
+        <h2>In this issue</h2>
+        <div class="story-layout">
+          <!-- EDIT: cover story -->
+          <article class="lead">
+            <div class="tag">Cover story</div>
+            <h3>The tea stall that has not closed in sixty years</h3>
+            <p>A short summary of your main story goes here, in two lines that make people want to read more.</p>
+            <a href="#contact">Read the full story</a>
+          </article>
+
+          <!-- EDIT: change titles, categories, or add more <li> blocks. Colour of the bar = category -->
+          <ul class="list">
+            <li style="--c: var(--rani)">
+              <div class="tag">Culture</div>
+              <h3>Weavers of the old city and the looms that outlived them</h3>
+            </li>
+            <li style="--c: var(--teal)">
+              <div class="tag">Travel</div>
+              <h3>Twelve hours on the slowest train in the country</h3>
+            </li>
+            <li style="--c: var(--marigold)">
+              <div class="tag" style="color: #8a6100">Food</div>
+              <h3>What grandmothers cook when nobody is watching</h3>
+            </li>
+            <li style="--c: var(--indigo)">
+              <div class="tag">People</div>
+              <h3>A teacher, a bicycle and forty villages</h3>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="subscribe" id="subscribe">
+      <div class="wrap">
+        <h2>Subscribe</h2>
+        <!-- EDIT: plan names and prices -->
+        <div class="plans">
+          <div class="plan">
+            <h3>Digital</h3>
+            <div class="price">₹499 / year</div>
+            <p>Every issue as a PDF on your phone, the day it is published.</p>
+            <a class="btn wa" href="https://wa.me/919999999999?text=I%20want%20the%20Digital%20subscription" target="_blank" rel="noopener">Subscribe on WhatsApp</a>
+          </div>
+          <div class="plan alt">
+            <h3>Print and digital</h3>
+            <div class="price">₹999 / year</div>
+            <p>Printed copy delivered to your home, plus the digital edition.</p>
+            <a class="btn wa" href="https://wa.me/919999999999?text=I%20want%20the%20Print%20and%20Digital%20subscription" target="_blank" rel="noopener">Subscribe on WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="wrap">
+        <h2>Write to us</h2>
+        <p>Story ideas, advertising, or any question about your subscription. We reply within two days.</p>
+        <!-- EDIT: your real email and phone number -->
+        <a class="mail" href="mailto:hello@namaskarindia.co">hello@namaskarindia.co</a>
+        <a class="btn" href="tel:+919999999999">Call us</a>
+        <a class="btn wa" style="margin-left: 0.75rem" href="https://wa.me/919999999999" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+    </section>
+  </main>
+
+  <a class="float-wa" href="https://wa.me/919999999999" target="_blank" rel="noopener">WhatsApp us</a>
+
+  <footer>
+    &copy; 2026 Namaskar India. All rights reserved.
+  </footer>
+
+</body>
+</html>
