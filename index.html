@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Glow Beauty Studio | Facials, Hair, Bridal Makeup</title>
+  <meta name="description" content="Glow Beauty Studio: facials, hair, makeup, nails and bridal packages. Book your appointment on WhatsApp.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gloock&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --plum: #4A1942;
+      --blush: #FBE3E8;
+      --rose: #D9577A;
+      --gold: #C9922E;
+      --white: #FFFFFF;
+      --display: "Gloock", Georgia, serif;
+      --body: "Nunito Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--body); font-size: 1.1rem; line-height: 1.6; color: var(--plum); background: var(--white); }
+    a { color: inherit; }
+    :focus-visible { outline: 3px solid var(--rose); outline-offset: 3px; }
+    .wrap { max-width: 1040px; margin: 0 auto; }
+    h2 { font-family: var(--display); font-weight: 400; font-size: 2.25rem; line-height: 1.15; margin-bottom: 1.5rem; }
+
+    header { background: var(--blush); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; padding: 1rem 1.5rem; }
+    header .brand { font-family: var(--display); font-size: 1.4rem; text-decoration: none; }
+    header nav a { margin-left: 1.25rem; text-decoration: none; font-weight: 600; }
+    header nav a:hover { color: var(--rose); }
+
+    .btn { display: inline-block; background: var(--rose); color: var(--white); padding: 0.85rem 1.75rem; border-radius: 999px; text-decoration: none; font-weight: 700; }
+    .btn:hover { background: #bd4467; }
+    .btn.dark { background: var(--plum); }
+    .btn.dark:hover { background: #33112e; }
+    .btn.wa { background: #1E8E4E; }
+    .btn.wa:hover { background: #17703d; }
+
+    /* Hero */
+    .hero { background: var(--blush); padding: 2.5rem 1.5rem 4rem; }
+    .hero .wrap { display: grid; grid-template-columns: 1fr; gap: 3rem; align-items: center; }
+    .hero h1 { font-family: var(--display); font-weight: 400; font-size: clamp(2.75rem, 9vw, 5rem); line-height: 1.05; margin-bottom: 1.25rem; }
+    .hero p { max-width: 30rem; font-size: 1.2rem; margin-bottom: 2rem; }
+    .hero .btn + .btn { margin-left: 0.75rem; }
+    .arch { width: min(280px, 72%); aspect-ratio: 3 / 4; margin: 0 auto; border-radius: 999px 999px 0 0; background: linear-gradient(160deg, var(--rose) 0%, var(--plum) 100%); color: var(--white); display: flex; align-items: flex-end; justify-content: center; padding: 2rem 1rem; font-family: var(--display); font-size: 2.5rem; text-align: center; line-height: 1.1; }
+    @media (min-width: 800px) { .hero .wrap { grid-template-columns: 1.3fr 1fr; } }
+
+    /* Services */
+    .services { padding: 4rem 1.5rem; }
+    .price-cols { display: grid; grid-template-columns: 1fr; gap: 2.5rem; }
+    .group h3 { font-family: var(--display); font-weight: 400; font-size: 1.5rem; color: var(--rose); margin-bottom: 0.5rem; }
+    .group ul { list-style: none; }
+    .group li { display: flex; justify-content: space-between; gap: 1rem; padding: 0.7rem 0; border-bottom: 1px solid #e9cfd6; }
+    .group li span:last-child { font-weight: 700; white-space: nowrap; }
+    .note { margin-top: 1.5rem; font-size: 1rem; }
+    @media (min-width: 720px) { .price-cols { grid-template-columns: 1fr 1fr; gap: 3rem; } }
+
+    /* Why us */
+    .why { background: var(--plum); color: var(--white); padding: 4rem 1.5rem; }
+    .why .points { display: grid; grid-template-columns: 1fr; gap: 1.75rem; }
+    .why h3 { font-size: 1.2rem; font-weight: 700; color: var(--blush); margin-bottom: 0.25rem; }
+    @media (min-width: 720px) { .why .points { grid-template-columns: repeat(3, 1fr); } }
+
+    /* Visit */
+    .visit { padding: 4rem 1.5rem; }
+    .visit .cols { display: grid; grid-template-columns: 1fr; gap: 2.5rem; }
+    .hours { list-style: none; }
+    .hours li { display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #e9cfd6; }
+    .visit p { margin-bottom: 1rem; }
+    @media (min-width: 720px) { .visit .cols { grid-template-columns: 1fr 1fr; } }
+
+    /* Book */
+    .book { background: var(--blush); padding: 4rem 1.5rem; text-align: center; }
+    .book p { max-width: 32rem; margin: 0 auto 1.5rem; }
+    .book .btn + .btn { margin-left: 0.75rem; margin-top: 0.75rem; }
+
+    footer { background: var(--plum); color: var(--white); padding: 1.5rem; text-align: center; font-size: 0.95rem; }
+    .float-wa { position: fixed; right: 1rem; bottom: 1rem; background: #1E8E4E; color: var(--white); padding: 0.75rem 1.25rem; border-radius: 999px; text-decoration: none; font-weight: 700; box-shadow: 0 4px 12px rgba(0,0,0,0.25); z-index: 10; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <!-- EDIT: studio name -->
+    <a class="brand" href="#top">Glow Beauty Studio</a>
+    <nav>
+      <a href="#services">Services</a>
+      <a href="#visit">Visit</a>
+      <a href="#book">Book</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <div class="hero">
+      <div class="wrap">
+        <div>
+          <!-- EDIT: headline and intro -->
+          <h1>Look good. Feel like yourself.</h1>
+          <p>Facials, hair, makeup, nails and bridal packages, done by trained artists in a calm, clean studio.</p>
+          <a class="btn wa" href="https://wa.me/919999999999?text=Hi%2C%20I%20want%20to%20book%20an%20appointment" target="_blank" rel="noopener">Book on WhatsApp</a>
+          <a class="btn dark" href="#services">See prices</a>
+        </div>
+        <div class="arch" aria-hidden="true">Glow<br>Studio</div>
+      </div>
+    </div>
+
+    <section class="services" id="services">
+      <div class="wrap">
+        <h2>Services and prices</h2>
+        <!-- EDIT: change service names and prices, add or delete <li> lines -->
+        <div class="price-cols">
+          <div class="group">
+            <h3>Skin</h3>
+            <ul>
+              <li><span>Classic facial</span><span>₹800</span></li>
+              <li><span>Glow facial</span><span>₹1,500</span></li>
+              <li><span>Clean-up</span><span>₹600</span></li>
+              <li><span>Full body waxing</span><span>₹1,800</span></li>
+            </ul>
+          </div>
+          <div class="group">
+            <h3>Hair</h3>
+            <ul>
+              <li><span>Haircut</span><span>₹400</span></li>
+              <li><span>Hair spa</span><span>₹1,200</span></li>
+              <li><span>Colour (per streak)</span><span>₹300</span></li>
+              <li><span>Keratin treatment</span><span>₹4,500</span></li>
+            </ul>
+          </div>
+          <div class="group">
+            <h3>Makeup and Mehndi</h3>
+            <ul>
+              <li><span>Party makeup</span><span>₹2,500</span></li>
+              <li><span>Bridal makeup</span><span>₹15,000</span></li>
+              <li><span>Bridal mehndi</span><span>₹3,000</span></li>
+              <li><span>Saree draping</span><span>₹500</span></li>
+            </ul>
+          </div>
+          <div class="group">
+            <h3>Nails</h3>
+            <ul>
+              <li><span>Manicure</span><span>₹500</span></li>
+              <li><span>Pedicure</span><span>₹700</span></li>
+              <li><span>Nail extensions</span><span>₹1,500</span></li>
+              <li><span>Nail art (per hand)</span><span>₹400</span></li>
+            </ul>
+          </div>
+        </div>
+        <p class="note">Prices are starting prices and may change with hair length or the product used. Ask us on WhatsApp for an exact quote.</p>
+      </div>
+    </section>
+
+    <section class="why">
+      <div class="wrap">
+        <h2>Why come to us</h2>
+        <!-- EDIT: your real strengths -->
+        <div class="points">
+          <div>
+            <h3>Trained artists</h3>
+            <p>Every service is done by a professional with years of experience.</p>
+          </div>
+          <div>
+            <h3>Clean and safe</h3>
+            <p>Sanitised tools and fresh products for every client.</p>
+          </div>
+          <div>
+            <h3>Fair prices</h3>
+            <p>Clear prices up front, with no surprise charges at the end.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="visit" id="visit">
+      <div class="wrap">
+        <h2>Visit the studio</h2>
+        <div class="cols">
+          <div>
+            <!-- EDIT: your real address -->
+            <p>Shop No. 12, Main Market Road,<br>Your City, State, PIN 000000</p>
+            <p>Phone: <a href="tel:+919999999999">+91 99999 99999</a></p>
+            <a class="btn dark" href="https://www.google.com/maps/search/?api=1&query=Beauty+Studio+Your+City" target="_blank" rel="noopener">Open in Maps</a>
+          </div>
+          <!-- EDIT: opening hours -->
+          <ul class="hours">
+            <li><span>Monday to Friday</span><span>10 AM to 8 PM</span></li>
+            <li><span>Saturday</span><span>10 AM to 9 PM</span></li>
+            <li><span>Sunday</span><span>11 AM to 6 PM</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="book" id="book">
+      <div class="wrap">
+        <h2>Book your appointment</h2>
+        <p>Send us a message with the service and the day you want. We will confirm the time on WhatsApp.</p>
+        <a class="btn wa" href="https://wa.me/919999999999?text=Hi%2C%20I%20want%20to%20book%20an%20appointment" target="_blank" rel="noopener">Message on WhatsApp</a>
+        <a class="btn dark" href="tel:+919999999999">Call now</a>
+      </div>
+    </section>
+  </main>
+
+  <a class="float-wa" href="https://wa.me/919999999999?text=Hi%2C%20I%20want%20to%20book%20an%20appointment" target="_blank" rel="noopener">Book on WhatsApp</a>
+
+  <footer>
+    &copy; 2026 Glow Beauty Studio. All rights reserved.
+  </footer>
+
+</body>
+</html>
